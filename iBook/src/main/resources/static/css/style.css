@@ -1,0 +1,131 @@
+body {
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+
+}
+header {
+	width: 100%;
+	position: fixed;
+	background-color: #F71735;
+	text-align: center;
+	padding: .5em;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+main {
+		width: 50ch;
+		background-color: #31D182;
+		padding: 1em;
+		margin: auto;
+		margin-top: 2em;
+		
+}
+
+button {
+	 display:inline-block;
+ padding:0.5em 3em;
+ border:0.16em solid #FFFFFF;
+ margin:0 0.3em 0.3em 0;
+ box-sizing: border-box;
+ text-decoration:none;
+ text-transform:uppercase;
+ font-family:'Roboto',sans-serif;
+ font-weight:400;
+ color:#FFFFFF;
+ text-align:center;
+ transition: all 0.15s;
+}
+button:hover {
+	background: #D1651B;
+	background-color: #D1651B;
+}
+button:active {
+	top:0.1em;
+}
+
+
+
+input{
+	
+}
+span{
+	
+}
+#create-post-popup {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50ch;
+	padding: 1em;
+	margin-top: 2em;
+	background-color: #38C8D1;
+}
+
+
+	
+#save-post-button {
+	margin-left: 2.7em;
+	
+}
+
+#cancel-post-button {
+	
+}
+#post-template {
+	position: relative;
+	background-color: #ffffff;
+	margin-bottom: .1em;
+	padding: 1em;
+}
+
+.add-post-comment {
+	
+	
+}
+
+.post-content {
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+	
+}
+.number-of-comments {
+	
+}
+
+#add-post {
+	
+}
+#search {
+	
+}
+
+.username {
+	
+}
+
+.editable {
+	float: right;
+	
+}
+
+.post {
+	
+}
+#create-post-popup textarea {
+	display: block;
+	min-width: 100%;
+	max-width: 100%;
+}
+
+
+	
+
+.show-add-popup {
+	margin-top: 0;
+	display: block !important;
+}
+
+.main-add-popup {
+margin-top: 0;
+}
