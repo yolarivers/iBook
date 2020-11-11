@@ -23,22 +23,20 @@ main {
 }
 
 button {
-	 display:inline-block;
- padding:0.5em 3em;
- border:0.16em solid #FFFFFF;
- margin:0 0.3em 0.3em 0;
- box-sizing: border-box;
- text-decoration:none;
- text-transform:uppercase;
- font-family:'Roboto',sans-serif;
- font-weight:400;
- color:#FFFFFF;
- text-align:center;
- transition: all 0.15s;
+  background-color: #31D182;
+  color: white;
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
 button:hover {
-	background: #D1651B;
-	background-color: #D1651B;
+	color: white;
+	background-color: #F71735;
 }
 button:active {
 	top:0.1em;
@@ -46,12 +44,7 @@ button:active {
 
 
 
-input{
-	
-}
-span{
-	
-}
+
 #create-post-popup {
 	display: none;
 	margin-left: auto;
@@ -72,7 +65,12 @@ span{
 #cancel-post-button {
 	
 }
+
 #post-template {
+	display: none;
+}
+
+#post-template, .post {
 	position: relative;
 	background-color: #ffffff;
 	margin-bottom: .1em;
@@ -109,9 +107,7 @@ span{
 	
 }
 
-.post {
-	
-}
+
 #create-post-popup textarea {
 	display: block;
 	min-width: 100%;

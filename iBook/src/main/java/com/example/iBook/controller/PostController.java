@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.iBook.pojo.Post;
@@ -29,6 +30,32 @@ public class PostController {
 		
 	}
 	
+	@RequestMapping("/save-post")
+	public Post savePost(@RequestParam String content, @RequestParam int id) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String name = auth.getName();
+		User user = UserRepo.findFirstByName(name);
+		
+		if (id > 0) {
+			Post post = PostRepo.findById(id).get();
+			if (user.getName().equals(post.getUser().getName())) {
+				post.setContent(content);
+				post.setDate(new Date());
+				post = PostRepo.save(post);
+				return post;
+			}
+			
+		} else {
+		
+		Post post = new Post();
+		post.setUser(user);
+		post.setContent(content);
+		post.setDate(new Date());
+		post = PostRepo.save(post);
+		return post;
+	}
+		return null;
+	}
 	
 	@RequestMapping("/get-posts")
 	public List<Post> getPosts() {
@@ -37,22 +64,17 @@ public class PostController {
 		User user = UserRepo.findFirstByName(name);
 		
 		List<Post> posts = (List<Post>) PostRepo.findAll();
+		
+		for (Post post: posts) {
+			if (name.equals(post.getUser().getName())) {
+				post.setEditable(true);
+			}
+		}
+		
 		return posts;
 	}
 	
-	@RequestMapping("/save-post")
-	public Post savePost() {
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String name = auth.getName();
-		User user = UserRepo.findFirstByName(name);
-		
-		Post post = new Post();
-		post.setUser(user);
-		post.setContent("Test Post!");
-		post.setDate(new Date());
-		post = PostRepo.save(post);
-		return post;
-	}
+	
 
 
 	
